@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-expand-lg mb-3" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AlaskaDex</a>
+      <button
+    class="navbar-toggler d-lg-none"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  ></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('main.my_dex')}}">My AKDex</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.home')}}">Animals</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item">
+          <a class="nav-link" href="{{url_for('auth.login')}}">Sign In</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('auth.register')}}">Register</a>
+          </li>
+        </li></ul>
+      </div>
+    </div>
+  </nav>

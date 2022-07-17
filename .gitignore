@@ -1,0 +1,6 @@
+/.DS_Store
+/.env
+/.venv
+/SCRATCH
+/__pycache__
+/migrations
