@@ -2,3 +2,20 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
+body{ 
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("../images/sitebg.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.card h5 {
+    font-family: 'Sansita Swashed', cursive;
+}
+
+/* .login-card { 
+
+} */

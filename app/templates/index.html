@@ -7,7 +7,9 @@
         <div class="card-body">
           <h5 class="card-title">{{a.given_name}}</h5>
           <p class="card-text">{{a.sci_name}}</p>
-          <a href="#" class="btn btn-primary">Add</a>
+          <form action="{{url_for('main.add_to_dex')}}" method="GET">
+            <input type="submit" value="Add">
+       </form>
         </div>
       </div>
     </div>
