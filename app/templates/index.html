@@ -1,4 +1,8 @@
 {%extends "layout.html"%} {%block content%}
+<div class=" container mx-auto p3 text-center">
+  <h3>Welcome, {{current_user.first_name}}</h3>
+  <h5>Have you discovered any new Alaskan animals lately?</h5>
+</div>
 <div class="container">
   <div class="row g-2">
     {%for a in animals%}
@@ -13,6 +17,7 @@
             <input type="checkbox" id="animal" name="animal" value="{{a.id}}" checked hidden>
   <label for="animal"></label>
             <button type="submit" class ="btn btn-primary">Add</button>
+            <span><a href="https://en.wikipedia.org/wiki/{{a.given_name}}" class="btn btn-primary" target="_blank">Learn More</a></span>
        </form>
         </div>
       </div>

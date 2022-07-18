@@ -1,4 +1,22 @@
-{%extends "./layout.html"%}
-{%block content%}
-<h1>My Dex</h1>
-{%endblock content%}
+{%extends "./layout.html"%} {%block content%}
+<div class="container text-lg-center">
+  <h2>{{current_user.first_name}}'s Alaska Dex</h2>
+  <div class="container p-3">
+    {%for a in current_user.animals%}
+    <div class="card w-25 mx-auto my-2 text-center">
+      <div class="card-body">
+        <h5 class="card-title">{{a.given_name}}</h5>
+        <p class="card-text">{{a.family}}.</p>
+        <p class="card-text">{{a.order}}.</p>
+        <a
+          href="https://en.wikipedia.org/wiki/{{a.given_name}}"
+          class="btn btn-primary"
+          target="_blank"
+          >Learn More!</a
+        >
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+  {%endblock content%}
+</div>

@@ -41,7 +41,7 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for("main.home"))
     try:
-        if request.method == "POST" and rform.validate_on_submit():
+        if request.method == "POST" and rform.validate():
             email = rform.email.data
             check_user = User.query.filter_by(email=email).first()
 
@@ -73,14 +73,10 @@ def register():
                     flash("Your passwords don't match.", "danger")
                 # sends them back to registration page if they don't successfully register a user.
                 return render_template("register.html")
-        elif request.method == "POST":
-            flash(
-                "Please try again. One or more fields was not completed correctly",
-                "danger",
-            )
         else:
             return render_template("register.html", form=rform)
-    except:
+    except Exception as err:
+        print(err)
         flash("Please enter all data correctly. Try again", "danger")
 
     return render_template("register.html", form=rform)

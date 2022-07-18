@@ -27,7 +27,3 @@ def build_animal_db(path: str) -> None:
             )
             db.session.add(a)
         db.session.commit()
-
-
-def seed_database() -> None:
-    pass

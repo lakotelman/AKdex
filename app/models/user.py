@@ -2,10 +2,12 @@ from flask_login import UserMixin
 from app.database import db
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlalchemy.orm as orm
+from datetime import datetime
 
 user_found = db.Table('user_found', 
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')), 
-    db.Column('animal_id', db.Integer, db.ForeignKey('animal.id'))
+    db.Column('animal_id', db.Integer, db.ForeignKey('animal.id')),
+    db.Column('date_added', db.DateTime, default=datetime.utcnow)
     )
 
 class User(db.Model, UserMixin):
