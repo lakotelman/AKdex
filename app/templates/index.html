@@ -7,8 +7,12 @@
         <div class="card-body">
           <h5 class="card-title">{{a.given_name}}</h5>
           <p class="card-text">{{a.sci_name}}</p>
-          <form action="{{url_for('main.add_to_dex')}}" method="GET">
-            <input type="submit" value="Add">
+          <p class="card-text">Family: {{a.family}}</p>
+          <p class="card-text">Order: {{a.order}}</p>
+          <form action="/add" method="POST">
+            <input type="checkbox" id="animal" name="animal" value="{{a.id}}" checked hidden>
+  <label for="animal"></label>
+            <button type="submit" class ="btn btn-primary">Add</button>
        </form>
         </div>
       </div>
